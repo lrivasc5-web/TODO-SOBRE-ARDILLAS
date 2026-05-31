@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Ardilla - Especies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="images/logofinalmente.png" alt="Todo sobre Ardillas" class="logo-principal">
+            <p>ardillas, ardillas y más ardillas.</p>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="especies.html">Especies</a>
+            <a href="galeria.html" class="active">fotitos</a>
+        </nav>
+    </header>
+
+    <main>
+<section class="galeria-instagram-contenedor">
+    <h2 class="titulo-galeria">FOTITOS</h2>
+    <p class="subtitulo-galeria">ARDILLA, ARDILLAS Y MAS ARDILLAS</p>
+
+    <div class="rejilla-instagram">
+        <div class="item-foto-insta">
+            <img src="images/insta1 ardilla listada.jpg" alt="Ardilla comiendo">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/insta2 perritos de la pradera.jpg" alt="Ardilla curiosa">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/insta3 ardilla gigante india.jpg" alt="Ardilla en la nieve">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/insta4 ardilla roja eurasiatica.jpg" alt="Ardilla saltando">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/insta5 ardilla voladora.jpg" alt="Ardilla bebé">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/INSTA6 ARDILLA ANTILOPE.jpg" alt="Ardilla durmiendo">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/INSTA VIDEO.gif" alt="Ardilla durmiendo">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/INSTA7 ARDILLA CORRIENDO.jpg" alt="Ardilla durmiendo">
+        </div>
+        <div class="item-foto-insta">
+            <img src="images/INSTA8.jpg" alt="Ardilla durmiendo">
+        </div>
+    </div>
+    
+</section>
+</main>
+<div id="mi-modal-galeria" class="modal-galeria">
+    <span class="boton-cerrar-modal">&times;</span>
+    <img class="imagen-modal-contenido" id="foto-ampliada">
+</div>
+
+<script>
+    const modal = document.getElementById("mi-modal-galeria");
+    const imagenModal = document.getElementById("foto-ampliada");
+    const botonCerrar = document.querySelector(".boton-cerrar-modal");
+    const fotosInstagram = document.querySelectorAll(".item-foto-insta img");
+
+    fotosInstagram.forEach(foto => {
+        foto.addEventListener("click", function() {
+            modal.style.display = "flex";
+            imagenModal.src = this.src;
+        });
+    });
+
+    botonCerrar.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", function(evento) {
+        if (evento.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
